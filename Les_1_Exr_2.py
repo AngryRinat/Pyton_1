@@ -1,32 +1,54 @@
-
 qube_list = []
-
+new_list = []
 for i in range(1, 1001, 2):
     n = i**3
     qube_list.append(n)
 
-
-
-count = 0
 for i in range(len(qube_list)):
-    m = qube_list[i]
-    sum = (m // 1000) + ((m % 1000) // 100) + (((m % 1000) % 100) // 10) + (m % 10)
-    if (sum % 7) == 0:
-        count += sum
-
-print(f'Сумма чисел равна {count}')
+    count = 0
+    n_number = qube_list[i]
 
 
-count = 0
+    while (n_number*10) // 10 != 0:
+
+            number = n_number % 10
+
+            n_number //= 10
+
+            count += number
+
+
+    if count % 7 == 0:
+        #print(count, qube_list[i])
+        new_list.append(round(qube_list[i]**(1/3)))
+
+print(new_list)
+
+qube_list = []
+new_list = []
+
+for i in range(1, 1001, 2):
+    n = i**3 + 17
+    qube_list.append(n)
+
 for i in range(len(qube_list)):
-    qube_list[i] = qube_list[i] + 17
+    count = 0
+    n_number = qube_list[i]
 
 
-for i in range(len(qube_list)):
-    m = qube_list[i]
-    sum = (m // 1000) + ((m % 1000) // 100) + (((m % 1000) % 100) // 10) + (m % 10)
-    if (sum % 7) == 0:
-        count += sum
-print(f'Сумма чисел после прибавления 17 равна {count}')
+    while (n_number*10) // 10 != 0:
+
+            number = n_number % 10
+
+            n_number //= 10
+
+            count += number
+
+
+    if count % 7 == 0:
+        #print(count, qube_list[i])
+        new_list.append(round(qube_list[i]**(1/3)))
+
+print(new_list)
 
 
