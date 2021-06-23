@@ -1,5 +1,6 @@
 qube_list = []
 new_list = []
+count_over = 0
 for i in range(1, 1001, 2):
     n = i**3
     qube_list.append(n)
@@ -20,12 +21,14 @@ for i in range(len(qube_list)):
 
     if count % 7 == 0:
         #print(count, qube_list[i])
-        new_list.append(round(qube_list[i]**(1/3)))
+        #new_list.append(round(qube_list[i]**(1/3)))
+        count_over += qube_list[i]
 
-print(new_list)
+print(count_over)
 
 qube_list = []
 new_list = []
+count_over = 0
 
 for i in range(1, 1001, 2):
     n = i**3 + 17
@@ -48,7 +51,8 @@ for i in range(len(qube_list)):
     if count % 7 == 0:
         #print(count, qube_list[i])
         new_list.append(round(qube_list[i]**(1/3)))
+        count_over += qube_list[i]
 
-print(new_list)
+print(count_over)
 
 
