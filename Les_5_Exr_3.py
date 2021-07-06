@@ -7,14 +7,15 @@ klasses = [
 ]
 
 def class_gen(list1, list2):
-    dict1 = {}
     for i in range(len(list1)):
         if i >= len(list2):
             list2.append(None)
-        dict1[list1[i]] = list2[i]
-        yield dict1
+        tup_tmp = (list1[i], list2[i])
+        yield tup_tmp
 
 n = class_gen(tutors, klasses)
+print(type(class_gen(tutors, klasses)))
+print(type(next(n)))
 
 
 print(next(n))
@@ -24,4 +25,3 @@ print(next(n))
 print(next(n))
 print(next(n))
 print(next(n))
-
